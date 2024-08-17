@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: left; /* Align text inside the container to the left */
+            max-width: 600px; /* Set maximum width for better readability */
+            width: 100%; /* Make the container take the full width of its parent */
+            padding: 20px; /* Add padding for better spacing */
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+ <div class="container">
+
+    <h1>Privacy Policy</h1>
+
+    <p>Last Updated: 15.01.2024</p>
+
+    <h2>1. Introduction</h2>
+
+    <p>Welcome to the privacy policy for our services. This document outlines how we collect, use, and protect your personal information.</p>
+
+    <h2>2. Privacy Policy Accessibility</h2>
+
+    <h3>2.1 Public URL:</h3>
+
+    <p>This privacy policy is available on an active, publicly accessible, and non-geofenced URL at <a href="https://www.hookshotstudio.com/privacy-policy" target="_blank">https://www.hookshotstudio.com/privacy-policy</a></p>
+
+    <h2>3. Privacy Policy Labeling</h2>
+
+    <p>This document is labeled as the "Privacy Policy" for our services.</p>
+
+    <h2>4. Privacy Point of Contact</h2>
+
+    <p>For any inquiries related to privacy or this policy, please contact us at blackteacoding@gmail.com.</p>
+
+    <h2>5. Accessibility and Editability</h2>
+
+    <h3>5.1 Browser Readability:</h3>
+
+    <p>This policy is designed to be readable in a standard browser without any plug-ins or special handlers, ensuring easy access.</p>
+
+    <h3>5.2 Non-editable:</h3>
+
+    <p>This privacy policy is non-editable to maintain its integrity and accuracy.</p>
+
+    <h2>6. Comprehensive Data Disclosure</h2>
+
+    <h3>6.1 Types of Data:</h3>
+
+    <p>We may collect personal information such as your name, email address, and other necessary details for the services we provide.</p>
+
+    <h3>6.2 Data Access, Use, and Sharing:</h3>
+
+    <p>We disclose how your personal and non-personal data is accessed, collected, used, and shared. We do not sell, trade, or transfer your personal information to third parties without your explicit consent.</p>
+
+    <h3>6.3 Data Handling Procedures:</h3>
+
+    <p>We implement secure data handling procedures to protect your personal information from unauthorized access, disclosure, alteration, and destruction.</p>
+
+    <h3>6.4 Data Retention and Deletion:</h3>
+
+    <p>We outline our data retention and deletion policy, ensuring transparent practices regarding how long we keep your information and the mechanisms for its deletion.</p>
+
+    <h2>7. Changes to the Privacy Policy</h2>
+
+    <p>We reserve the right to update or modify this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on our website. By using our services, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</p>
+
+    <h2>8. Third-Party Services</h2>
+
+    <h3>8.1 Unity Engine:</h3>
+
+    <p>Our app is built using the Unity game development engine. Unity may collect certain information as outlined in <a href="https://unity.com/legal/privacy-policy" target="_blank">Unity's Privacy Policy</a>. Please review their policy to understand how Unity handles user data.</p>
+
+    <h3>8.2 AdMob Monetization:</h3>
+
+    <p>We use AdMob, a mobile advertising platform provided by Google, to serve advertisements in our app. AdMob may collect and use certain information as described in <a href="https://www.google.com/adsense/new/localized-terms" target="_blank">Google's Privacy Policy</a>. Users may opt-out of personalized advertising by visiting Google's Ad Settings.</p>
+</div>
+</body>
+
+</html>

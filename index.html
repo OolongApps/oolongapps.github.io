@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hook Shot Studio - Game Dev</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="icon" href="../static/img/hss white.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+	<link href="../static/css/style.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script>
+		$(document).on('click', 'a[href^="#"]', function (event) {
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top + -70
+			}, 1000);
+		});
+	</script>
+</head>
+
+<body>
+
+	<script>
+		var app = angular.module("myApp", ["ngRoute"]);
+		app.config(function($routeProvider) {
+			$routeProvider
+			.when("/home", {
+				templateUrl : "index.html"
+			})
+			.when("/app-ads.txt", {
+				templateUrl : "app-ads.txt"
+			});
+		});
+	</script>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-custom">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Hook Shot Studio</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+				<ul class="navbar-nav navbar-center">
+					<li class="nav-item active">
+						<a class="nav-link" href="#top-img">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#games-tag">Games</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#team-tag">Team</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact Us</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--- Image -->
+
+	<img id="top-img" src="../static/img/Hss web.png" class="img-fluid" alt="Responsive image">
+
+	<!--- Cards -->
+	<section id="games-tag" class="bg-gray">
+		<div class="container-fluid text-center p-4">
+			<h1 class="display-4">
+				Our Aweasome Games
+			</h1>
+			<p class="mt-3">
+				Hello form Hook Shot Studio.
+			</p>
+			<p>
+				We are just two friends who passioned about making games!
+			</p>
+		</div>
+	</section>
+
+	<section id="games">
+		<div class="container py-5">
+			
+			<div class="card mx-3" style="width: auto; height: auto; max-width: 67.5rem;">
+				<div class="card-body d-flex flex-column">
+					<div class="row">
+						<div class="col-lg-4 my-auto">
+							<img src="../static/img/Tetoku Icon.png" alt=""
+							class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+						</div>
+
+						<div class="col py-3">
+							<h3 class="card-text" style="font-size: 42px;">Tetoku</h3>
+							<p class="card-text" style="font-size: 22px;"> Tetoku offers you by combining the sudoku system with the mechanics of the most popular puzzle games. 
+							</p>
+							<button type="button"
+							onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.Tetoku', '_blank')"
+							class="btn btn-outline-dark mb-3" style="max-width: 20rem; align-self: center;">
+							Available On Play Store
+							</button>
+						</div>
+					</div>					
+				</div>
+			</div>
+
+			<div class="card mx-3" style="width: auto; height: auto; max-width: 67.5rem;">
+				<div class="card-body d-flex flex-column">
+					<div class="row">
+						<div class="col-lg-4 my-auto">
+							<img src="../static/img/Color Box Icon.png" alt=""
+							class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+						</div>
+
+						<div class="col py-3">
+							<h3 class="card-text" style="font-size: 42px;">Color Box</h3>
+							<p class="card-text" style="font-size: 22px;">Platform game on our studio. 
+								This wonderful puzzle platformer takes you on adventure to the dark but colorful world.
+							</p>
+							<button type="button"
+							onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.ColorCube', '_blank')"
+							class="btn btn-outline-dark mb-3" style="max-width: 20rem; align-self: center;">
+							Available On Play Store
+							</button>
+						</div>
+					</div>					
+				</div>
+			</div>
+
+			<!--- Rows -->
+			<div class="row">
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Hexo Pop Icon.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Hexo Pop</h3>
+							<p class="card-text text-center">This is a match game with tile-on click rotation mechanism.
+								Pop and drop the hexes. Try to solve various hex based levels use helper special hexes
+								where you stuck at.
+							</p>
+							<button type="button"
+								onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.HexoPop', '_blank')"
+								class="btn btn-outline-dark mt-auto mb-3 mx-4">Available On Play Store</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Build Up Icon.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Build Up!</h3>
+							<p class="card-text text-center">Build up aims to building scaffolf with limited joints.
+								If player can reach to end point at the top of the map, he wins.
+							</p>
+							<button type="button"
+								onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.BuildUpPaid', '_blank')"
+								class="btn btn-outline-dark mt-auto mb-3 mx-4">Available On Play
+								Store</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Tile Puzzle.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Tile Puzzle</h3>
+							<p class="card-text text-center">Our first puzzle game. The aim is finding right position of
+								tile.
+								Tiles are part of famous arts and also levels are getting harder.
+							</p>
+							<button type="button"
+								onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.TilePuzzle', '_blank')"
+								class="btn btn-outline-dark mt-auto mt-auto mb-3 mx-4">Available On
+								Play Store</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Mini Golf Icon.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Pocket Mini Golf</h3>
+							<p class="card-text text-center">Pocket mini golf is designed as one shot mini golf game.
+								Designed with minimalistic patterns.
+							</p>
+							<button type="button"
+								onclick="window.open('https://github.com/uysalaltas/Mini-Golf-Game','_blank')"
+								class="btn btn-outline-dark mt-auto mb-3 mx-4">Available On Github</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Protect Diamond.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Protect Diamond</h3>
+							<p class="card-text text-center">This is a match game with tile-on click rotation mechanism.
+								Pop and drop the hexes. Try to solve various hex based levels use helper special hexes
+								where you stuck at.
+							</p>
+							<button type="button"
+								onclick="window.open('https://play.google.com/store/apps/details?id=com.HookShotStudio.ProtectDiamond','_blank')"
+								class="btn btn-outline-dark mt-auto mb-3 mx-4">Available On Play
+								Store</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="card">
+						<div class="card-body d-flex flex-column">
+							<img src="../static/img/Cross Box Icon.png" alt=""
+								class="img-fluid w-75 mb-3 rounded mx-auto d-block">
+							<h3 class="text-center">Cross Box</h3>
+							<p class="card-text text-center">The first game developed by our studio.
+								Cross Box is designed in endless runner style. The aim is making the highest score.
+							</p>
+							<button type="button"
+								onclick="window.open('https://github.com/uysalaltas/Cross-Box', '_blank')"
+								class="btn btn-outline-dark mt-auto mb-3 mx-4">Available On Github</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--- Rows End-->
+
+		</div>
+	</section>
+
+	<!--- Teams -->
+	<div class="row empty mx-0">
+         
+	</div>
+
+	<section id="team-tag" class="bg-gray">
+		<div class="container-fluid text-center p-4">
+			<h1 class="display-4">
+				Our Glorious Team
+			</h1>
+		</div>
+	</section>
+
+	<section id="team1" class="pt-5">
+		<div class="card" style="max-width: 70rem;">
+			<div class="row">
+				<div class="col-lg-4 pt-5">
+					<div class="row">
+						<div class="col text-center">
+							<img src="../static/img/uysal.png" class="card-img">
+						</div>
+					</div>
+
+					<div class="row pt-5 mt-3 mb-5 text-center">
+						<div class="col">
+							<a href="https://twitter.com/AltasUysal" target="_blank">
+								<ion-icon class="px-3" name="logo-twitter"></ion-icon>
+							</a>
+							<a href="https://github.com/uysalaltas" target="_blank">
+								<ion-icon class="px-3" name="logo-github"></ion-icon>
+							</a>
+							<a href="https://www.linkedin.com/in/uysal-altas/" target="_blank">
+								<ion-icon class="px-3" name="logo-linkedin"></ion-icon>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col text-center my-auto">
+					<div class="card-body">
+						<h1 class="card-title pb-3">UYSAL ALTAS</h1>
+						<hr>
+						<h2 class="card-text pt-3">Engineer, Game Developer and Amateur Musician</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="team2">
+		<div class="card" style="max-width: 70rem;">
+			<div class="row">
+				<div class="col-lg-4 pt-5">
+					<div class="row">
+						<div class="col text-center">
+							<img src="../static/img/Cihat.png" class="card-img">
+						</div>
+					</div>
+
+					<div class="row pt-5 mt-3 mb-5 text-center">
+						<div class="col">
+							<a href="https://twitter.com/chtkyl" target="_blank">
+								<ion-icon class="px-3" name="logo-twitter"></ion-icon>
+							</a>
+							<a href="https://github.com/chtakyol" target="_blank">
+								<ion-icon class="px-3" name="logo-github"></ion-icon>
+							</a>
+							<a href="https://www.linkedin.com/in/cihat-akyol-051956124" target="_blank">
+								<ion-icon class="px-3" name="logo-linkedin"></ion-icon>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col text-center my-auto">
+					<div class="card-body">
+						<h1 class="card-title pb-3">CIHAT AKYOL</h1>
+						<hr>
+						<h2 class="card-text pt-3">Game Developer and Design Artist</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="row empty mx-0">
+         
+	</div>
+
+	<section id="contact" class="bg-green">
+		<div class="container-fluid p-4">
+			<h1 class="display-4 text-center">
+				CONTACT
+			</h1>
+			<h1 class="display-4 text-center">
+				US
+			</h1>
+
+			<hr style="text-align:center">
+
+			<a href="mailto:blackteacoding@gmail.com" target="_blank">
+				<h2 class="pt-4 text-center">
+					E-Mail : blackteacoding@gmail.com
+				</h2>
+			</a>
+
+			<div class="row p-4">
+				<div class="col text-right">
+					<a href="https://www.youtube.com/channel/UC-2yaxBpUVFgIIKYWESzq3w" target="_blank">
+						<ion-icon name="logo-youtube"></ion-icon>
+					</a>
+				</div>
+
+				<div class="col-auto text-center">
+					<a href="https://play.google.com/store/apps/dev?id=5029761483316813951" target="_blank">
+						<ion-icon name="logo-google-playstore"></ion-icon>
+					</a>
+				</div>
+
+				<div class="col text-left">
+					<a href="https://twitter.com/TeaCoding" target="_blank">
+						<ion-icon class="" name="logo-twitter"></ion-icon>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

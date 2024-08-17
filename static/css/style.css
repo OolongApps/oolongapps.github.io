@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Releway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+@font-face{
+    font-family: 'roboto-thin';
+    src: url(../fonts/Roboto-Thin.ttf) format("truetype");
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'roboto';
+    src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'barlow-thin';
+    src: url(../fonts/Barlow-Thin.ttf) format("truetype");
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'barlow';
+    src: url(../fonts/Barlow-Regular.ttf) format("truetype");
+    font-style: normal;
+}
+
+h1{
+    font-size: 36px;
+    color: #555;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: auto;
+    max-width: 400px;
+}
+
+.empty {
+    padding: 2rem;
+    background-color: #170c37;
+}
+
+.collapse.show {
+    min-height: 160px;
+}
+
+.bg-gray{
+    background-color: #b8b8b8;
+}
+
+.bg-custom{
+    background-color: #170c37;
+}
+
+.navbar-brand{
+    font-family: roboto-thin;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    font-family: roboto-thin;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.navbar-dark .navbar-nav .nav-item{
+    margin: 0 15px;
+}
+
+.navbar-center{
+    position: absolute; 
+    left: 50%; 
+    transform: translatex(-50%)
+}
+
+.card {
+    height: 35rem;
+    width: 20rem;
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 40px;
+}
+
+#games-tag h1{
+    font-family: barlow;
+    color: #000;
+}
+
+#games-tag p{
+    margin:0;
+    padding:0;
+    font-family: roboto;
+    font-size: 18px;
+    color: #000;
+}
+
+#team-tag h1{
+    font-family: barlow;
+    color: #000;
+}
+
+#games img{
+    margin-top: 0px;
+    max-width: 250px;
+}
+
+#games i{
+    font-size: 26px;
+    color: #555;
+}
+
+#games p{
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(10, 10, 10);
+}
+
+#games h3{
+    font-family: barlow;
+}
+
+#games .card{
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #170c37;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+#games .card:hover{
+    background: #170c37;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 5px 10px #9e9e9e;
+}
+
+#games .card:hover h3, #games .card:hover i, #games .card:hover p{
+    color: #fff;
+}
+
+#games .card:hover button{
+    border-color: #fff;
+    color: #fff;
+}
+
+#games .card:hover button:hover{
+    border-color: #000;
+    color: #000;
+    background-color: #fff;
+}
+
+#team1 ion-icon {
+    font-size: 36px;
+    color: white;
+}
+
+#team1 .card-img{
+    width: 250px;
+}
+
+#team1 .card{
+    width: auto;
+    height: auto;
+    background-color: #9e0000;
+}
+
+#team1 .card h1{
+    font-family: barlow;
+    font-size: 48px;
+    letter-spacing: 10px;
+    color: #ffffff;
+}
+
+#team1 .card h2{
+    font-family: roboto-thin;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#team2 ion-icon {
+    font-size: 36px;
+    color: white;
+}
+
+#team2 .card-img{
+    width: 250px;
+}
+
+#team2 .card{
+    width: auto;
+    height: auto;
+    background-color: #2ea72e;
+}
+
+#team2 .card h1{
+    font-family: barlow;
+    font-size: 48px;
+    letter-spacing: 10px;
+    color: #ffffff;
+}
+
+#team2 .card h2{
+    font-family: roboto-thin;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#contact ion-icon{
+    font-size: 36px;
+    color: #ffffff;
+}
+
+#contact h1{
+    font-family: barlow;
+    color: #ffffff;
+}
+
+#contact h2{
+    font-family: barlow;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#contact hr{
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-style: inset;
+    border-width: 1px;
+    color: black;
+}
+
+.bg-green{
+    background-color: #000000;
+}
