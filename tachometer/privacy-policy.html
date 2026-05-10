@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tachometer Privacy Policy</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="icon" href="../static/img/HSS_Icon.png">
+	<script>
+		(function () {
+			var storageKey = 'hss-theme';
+			var savedTheme = window.localStorage.getItem(storageKey);
+			var systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+			document.documentElement.dataset.theme = savedTheme || systemTheme;
+		})();
+	</script>
+	<style>
+		:root {
+			--radius: 20px;
+			--border: rgba(124, 255, 154, 0.22);
+			--border-strong: rgba(124, 255, 154, 0.48);
+		}
+
+		html[data-theme="dark"] {
+			--bg: #071109;
+			--bg-alt: #0d1b10;
+			--panel: rgba(7, 18, 10, 0.92);
+			--text: #d9ffd4;
+			--muted: #94b091;
+			--accent: #7cff9a;
+			--accent-2: #f6d85b;
+			--scanline: rgba(255, 255, 255, 0.035);
+			--vignette: rgba(0, 0, 0, 0.36);
+		}
+
+		html[data-theme="light"] {
+			--bg: #efe2c6;
+			--bg-alt: #f7efd8;
+			--panel: rgba(252, 246, 233, 0.96);
+			--text: #1b241d;
+			--muted: #566356;
+			--accent: #205337;
+			--accent-2: #8a611f;
+			--scanline: rgba(0, 0, 0, 0.03);
+			--vignette: rgba(0, 0, 0, 0.07);
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			background:
+				radial-gradient(circle at top, rgba(124, 255, 154, 0.14), transparent 40%),
+				linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+			color: var(--text);
+			font-family: "Courier New", Courier, monospace;
+			position: relative;
+		}
+
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			pointer-events: none;
+			background: repeating-linear-gradient(180deg, transparent 0, transparent 2px, var(--scanline) 3px, transparent 5px);
+			opacity: 0.72;
+			mix-blend-mode: soft-light;
+		}
+
+		body::after {
+			content: "";
+			position: fixed;
+			inset: 0;
+			pointer-events: none;
+			background: radial-gradient(circle at center, transparent 40%, var(--vignette) 100%);
+		}
+
+		a { color: var(--accent); text-decoration: none; }
+		a:hover { color: var(--accent-2); }
+
+		.policy-shell { max-width: 980px; margin: 0 auto; padding: 2rem 1rem 3rem; position: relative; z-index: 1; }
+		.policy-back { display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1rem; padding: 0.65rem 0.95rem; border: 1px solid var(--border); border-radius: 999px; background: rgba(124,255,154,0.05); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; font-weight:700; }
+		.policy-panel { padding: 2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); box-shadow: 0 24px 60px rgba(0,0,0,0.28); }
+		.policy-tag { margin:0; font-size:0.72rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent-2); }
+		.policy-panel h1 { margin:0.4rem 0 0.6rem; font-size: clamp(2.2rem,5vw,4rem); line-height:0.98; letter-spacing:0.06em; text-transform:uppercase; }
+		.policy-panel p, .policy-panel li { color: var(--muted); line-height:1.75; }
+		.policy-meta { margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.12em; font-size:0.78rem; }
+
+		.md-raw { white-space: pre-wrap; font-family: inherit; color: var(--muted); }
+
+		@media (max-width: 767.98px) {
+			.policy-panel { padding: 1.4rem; }
+		}
+	</style>
+</head>
+
+<body>
+	<main class="policy-shell">
+		<a class="policy-back" href="../index.html">&larr; Back to catalog</a>
+		<section class="policy-panel">
+			<p class="policy-tag">privacy terminal</p>
+			<h1 id="policyTitle">Tacho – Tachometer RPM Privacy Policy</h1>
+			<p class="policy-meta">Last updated: March 18, 2026</p>
+			<article id="mdContent" class="md-raw">Loading policy…</article>
+
+			<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+			<script>
+				(function () {
+					var appDisplay = 'Tacho – Tachometer RPM';
+					fetch('privacy-policy.md')
+						.then(function (r) { return r.text(); })
+						.then(function (md) {
+							var lines = md.split(/\r?\n/);
+							var titleIdx = lines.findIndex(function (l) { return /^#\s+/.test(l); });
+							var title = titleIdx >= 0 ? lines[titleIdx].replace(/^#\s+/, '').trim() : 'Privacy Policy';
+							var updatedIdx = lines.findIndex(function (l) { return /^\*\*Last updated:?\*\*/i.test(l) || /^\*\*Last updated:/i.test(l); });
+							var updated = '';
+							if (updatedIdx >= 0) {
+								updated = lines[updatedIdx].replace(/^\*\*Last updated:?\*\*\s*/i, '').replace(/^\*\*Last updated:?\s*/i, '').trim();
+							}
+							var removeIdx = new Set([titleIdx, updatedIdx]);
+							var bodyLines = lines.filter(function (_, i) { return !removeIdx.has(i) && lines[i] !== '---'; });
+							var body = bodyLines.join('\n').trim();
+							document.getElementById('policyTitle').textContent = appDisplay + ' ' + title;
+							if (updated) document.querySelector('.policy-meta').textContent = 'Last updated: ' + updated;
+							var html = marked.parse(body || '');
+							document.getElementById('mdContent').innerHTML = html;
+						})
+						.catch(function (err) {
+							document.getElementById('mdContent').textContent = 'Failed to load policy.';
+							console.error(err);
+						});
+				})();
+			</script>
+		</section>
+	</main>
+</body>
+
+</html>
