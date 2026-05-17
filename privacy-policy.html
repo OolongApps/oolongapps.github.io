@@ -267,6 +267,10 @@
 				window.location.href = 'sleep_timer/privacy-policy.html';
 				return;
 			}
+			if (slug === 'sense-recall') {
+				window.location.href = 'sense_recall/privacy-policy.html';
+				return;
+			}
 			var appName = appNames[slug] || 'Hook Shot Studio';
 			document.getElementById('policyTitle').textContent = appName + ' Privacy Policy';
 			document.getElementById('policyMeta').textContent = 'Last updated: May 10, 2026';
