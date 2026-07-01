@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Terms and Conditions</title>
+	<title>GPS Speedometer – Terms and Conditions</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="icon" href="static/img/HSS_Icon.png">
+	<link rel="icon" href="../static/img/HSS_Icon.png">
 	<script>
 		(function () {
 			var storageKey = 'hss-theme';
@@ -17,10 +17,8 @@
 	</script>
 	<style>
 		:root { --radius: 20px; --border: rgba(124,255,154,0.22); --border-strong: rgba(124,255,154,0.48); }
-
 		html[data-theme="dark"] { --bg:#071109; --bg-alt:#0d1b10; --panel:rgba(7,18,10,0.92); --text:#d9ffd4; --muted:#94b091; --accent:#7cff9a; --accent-2:#f6d85b; --scanline:rgba(255,255,255,0.035); --vignette:rgba(0,0,0,0.36); }
 		html[data-theme="light"] { --bg:#efe2c6; --bg-alt:#f7efd8; --panel:rgba(252,246,233,0.96); --text:#1b241d; --muted:#566356; --accent:#205337; --accent-2:#8a611f; --scanline:rgba(0,0,0,0.03); --vignette:rgba(0,0,0,0.07); }
-
 		* { box-sizing: border-box; }
 		body { margin:0; min-height:100vh; background: radial-gradient(circle at top, rgba(124,255,154,0.14), transparent 40%), linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%); color:var(--text); font-family: "Courier New", Courier, monospace; position: relative; }
 		body::before { content:""; position:fixed; inset:0; pointer-events:none; background: repeating-linear-gradient(180deg, transparent 0, transparent 2px, var(--scanline) 3px, transparent 5px); opacity:0.72; mix-blend-mode: soft-light; }
@@ -40,43 +38,36 @@
 
 <body>
 	<main class="policy-shell">
-		<a class="policy-back" href="index.html">&larr; Back to catalog</a>
+		<a class="policy-back" href="../index.html">&larr; Back to catalog</a>
 		<section class="policy-panel">
 			<p class="policy-tag">terms terminal</p>
-			<h1 id="policyTitle">Terms and Conditions</h1>
-			<p class="policy-meta" id="policyMeta">Last updated: May 10, 2026</p>
+			<h1 id="policyTitle">GPS Speedometer – Terms and Conditions</h1>
+			<p class="policy-meta">Last updated: July 1, 2026</p>
 			<article id="mdContent" class="md-raw">Loading terms…</article>
 		</section>
 	</main>
 
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script>
 		(function () {
-			var params = new URLSearchParams(window.location.search);
-			var slug = params.get('app') || 'studio';
-			if (slug === 'tachometer') {
-				window.location.href = 'tachometer/terms.html';
-				return;
-			}
-			if (slug === 'dice-roller') {
-				window.location.href = 'dice_roller/terms.html';
-				return;
-			}
-			if (slug === 'sleep-timer') {
-				window.location.href = 'sleep_timer/terms.html';
-				return;
-			}
-			if (slug === 'sense-recall') {
-				window.location.href = 'sense_recall/terms.html';
-				return;
-			}
-			if (slug === 'gps-speedometer') {
-				window.location.href = 'gps_speedometer/terms.html';
-				return;
-			}
-			// For studio or unknown slugs you could fetch a generic terms file here.
-			if (slug === 'studio') {
-				document.getElementById('mdContent').textContent = 'Studio terms are located in the app catalog.';
-			}
+			fetch('terms-and-conditions.md')
+				.then(function (r) { return r.text(); })
+				.then(function (md) {
+					var lines = md.split(/\r?\n/);
+					var titleIdx = lines.findIndex(function (l) { return /^#\s+/.test(l); });
+					var title = titleIdx >= 0 ? lines[titleIdx].replace(/^#\s+/, '').trim() : 'Terms and Conditions';
+					var updatedIdx = lines.findIndex(function (l) { return /^\*\*Last updated:?\*\*/i.test(l) || /^\*\*Last updated:/i.test(l); });
+					var updated = '';
+					if (updatedIdx >= 0) { updated = lines[updatedIdx].replace(/^\*\*Last updated:?\*\*\s*/i, '').replace(/^\*\*Last updated:?\s*/i, '').trim(); }
+					var removeIdx = new Set([titleIdx, updatedIdx]);
+					var bodyLines = lines.filter(function (_, i) { return !removeIdx.has(i) && lines[i] !== '---'; });
+					var body = bodyLines.join('\n').trim();
+					document.getElementById('policyTitle').textContent = title;
+					if (updated) document.querySelector('.policy-meta').textContent = 'Last updated: ' + updated;
+					var html = marked.parse(body || '');
+					document.getElementById('mdContent').innerHTML = html;
+				})
+				.catch(function (err) { document.getElementById('mdContent').textContent = 'Failed to load terms.'; console.error(err); });
 		})();
 	</script>
 </body>

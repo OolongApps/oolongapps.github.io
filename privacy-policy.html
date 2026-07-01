@@ -251,6 +251,7 @@
 					tachometer: 'Tachometer',
 					'dice-roller': 'Dice Roller',
 					'sleep-timer': 'Sleep Timer',
+					'gps-speedometer': 'GPS Speedometer',
 				studio: 'Hook Shot Studio'
 			};
 			var params = new URLSearchParams(window.location.search);
@@ -269,6 +270,10 @@
 			}
 			if (slug === 'sense-recall') {
 				window.location.href = 'sense_recall/privacy-policy.html';
+				return;
+			}
+			if (slug === 'gps-speedometer') {
+				window.location.href = 'gps_speedometer/privacy-policy.html';
 				return;
 			}
 			var appName = appNames[slug] || 'Hook Shot Studio';
